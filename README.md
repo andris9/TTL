@@ -10,7 +10,7 @@ Include [ttl.js](ttl.js) in your web page (or load it with AMD).
 <script src="ttl.js"></script>
 ```
 
-For a locasStorage based example, check out [localstorage-ttl.js](localstorage-ttl.js) and [localstorage-ttl.js](localstorage-ttl.html) which bundles this TTL API into a localStorage backed solution.
+For a locasStorage based example, check out [localstorage-ttl.js](localstorage-ttl.js) and [localstorage-ttl.html](examples/localstorage-ttl.html) which bundles this TTL API into a localStorage backed solution.
 
 ### Create TTL handler
 
