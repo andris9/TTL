@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>LocalStorage TTL example</title>
+
+        <script src="../ttl.js"></script>
+        <script src="../localstorage-ttl.js"></script>
+
+    </head>
+    </body>
+        <ul id="log"></ul>
+        <script>
+
+            function log(message){
+                document.getElementById('log').innerHTML += '<li>' + message + '</li>'
+            }
+
+            TTL.addEventListener('expire', function(e){
+                log('Expired: "' + e.detail + '"');
+            });
+
+            // check if the last key is already set and if not, add some TTLs
+            if (!TTL.get('key9')) {
+                for (var i = 0; i < 10; i++) {
+                    TTL.set('key' + i, (i + 1) * 1000);
+                    log('Set TTL for ' + 'key' + i);
+                }
+            }else{
+                log('Some keys still unexpired, wait a bit');
+            }
+
+        </script>
+    </body>
+</html>
