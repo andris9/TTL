@@ -23,6 +23,7 @@
             // check if the last key is already set and if not, add some TTLs
             if (!TTL.get('key9')) {
                 for (var i = 0; i < 10; i++) {
+                    localStorage[key + i] = i + ',' + Date.now();
                     TTL.set('key' + i, (i + 1) * 1000);
                     log('Set TTL for ' + 'key' + i);
                 }
